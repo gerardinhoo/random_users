@@ -16,7 +16,6 @@ class Navbar extends Component {
       <nav className="navbar bg-success">
         <h1>
           <i className={this.props.icon} />
-          {""}
           {this.props.title}
         </h1>
       </nav>
