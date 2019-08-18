@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 class Navbar extends Component {
   static defaultProps = {
-    title: "Find Random Users",
+    title: "Random Users",
     icon: "fas fa-user"
   };
 
@@ -16,6 +16,7 @@ class Navbar extends Component {
       <nav className="navbar bg-success">
         <h1>
           <i className={this.props.icon} />
+          {""}
           {this.props.title}
         </h1>
       </nav>
