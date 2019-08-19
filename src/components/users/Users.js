@@ -12,6 +12,7 @@ class Users extends Component {
 
   componentDidMount() {
     this.setState({ loading: true });
+
     const { loading } = this.state;
     if (loading) {
       return <Spinner />;
@@ -37,13 +38,7 @@ class Users extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h2 className="user">Profile Users</h2>
-        <h4 className="list">A list of random profile users</h4>
-        {this.state.names}
-      </div>
-    );
+    return <div>{this.state.names}</div>;
   }
 }
 
