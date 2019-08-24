@@ -318,6 +318,7 @@ input {
   color: #888;
 }
 
+input[type="search"],
 input[type="text"],
 input[type="email"],
 input[type="password"],
