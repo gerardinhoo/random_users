@@ -13,13 +13,15 @@ class App extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.setState({ loading: true });
-    const res = await axios.get("https://randomuser.me/api/?results=10");
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(res => res.json())
+      .then(users => this.setState({ names: users, loading: false }));
 
-    this.setState({ names: res.data.results, loading: false });
+    // this.setState({ names: res.data.results, loading: false });
 
-    console.log(res.data.results);
+    // console.log(res.data.results);
 
     // return fetch("https://randomuser.me/api/?results=30")
     //   .then(results => {
