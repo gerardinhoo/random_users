@@ -1,17 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import UserItem from "./UserItem";
+import Spinner from "../layout/Spinner";
+import PropTypes from "prop-types";
 
-class Users extends Component {
-  render() {
+const Users = ({ names, loading }) => {
+  if (loading) {
+    return <Spinner />;
+  } else {
     return (
       <div style={userStyle}>
-        {this.props.names.map(name => (
+        {names.map(name => (
           <UserItem key={name.id} className="name" name={name} />
         ))}
       </div>
     );
   }
-}
+};
 
 const userStyle = {
   display: "grid",
@@ -19,42 +23,9 @@ const userStyle = {
   gridGap: "1rem"
 };
 
+Users.propTypes = {
+  names: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired
+};
+
 export default Users;
-
-// import React, { Component } from "react";
-
-// class Users extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       names: [],
-//       loading: false
-//     };
-//   }
-
-//   componentDidMount() {
-//     return fetch("https://randomuser.me/api/?results=30")
-//       .then(results => {
-//         return results.json();
-//       })
-//       .then(data => {
-//         let names = data.results.map(name => {
-//           return (
-//             <div key={name.results} className="profile">
-//               <h4 className="name">{name.name.first.toUpperCase()}</h4>
-//               <br />
-//               <img src={name.picture.large} alt="pic" />
-//             </div>
-//           );
-//         });
-//         this.setState({ names: names });
-//         console.log(names);
-//       });
-//   }
-
-//   render() {
-//     return <div>{this.state.names}</div>;
-//   }
-// }
-
-// export default Users;
