@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+/* @import url("https://fonts.googleapis.com/css?family=Roboto"); */
 
 /* Global Styles */
 :root {
@@ -413,8 +413,12 @@ table th {
   }
 }
 
+.name {
+  color: red;
+}
+
 /* Users displaying style */
-body {
+/* body {
   background-color: black;
 }
 .profile {
@@ -437,3 +441,7 @@ body {
   font-family: "Alegreya SC", serif;
   color: #ffff;
 }
+
+.user_item {
+  color: white;
+} */
