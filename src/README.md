@@ -13,11 +13,11 @@ Before we dive deep in the details let's review some core concepts of the React 
 **What's State in react?:**
 State is an object that determines how React components render and behave. It allows us to create components that are dynamic and interactive.
 
-Example to initialize state in a react app:
+- Initialization of state in a react app:
 
 `this.state = {[name: ""]}`
 
-**How to dynamicall change State in react?:**
+**How to dynamically change State in react?:**
 We do that by using `setState`.
 
 `this.setState: ({name: "Todd"})`
@@ -46,8 +46,13 @@ The two majors hooks features widely used are "useState" and "useEffect".
 
 **How do we use "useState" and "useEffect"**
 
-1. useState:
+**useState:**
+`UseState` allow us to use state in functional components.
 
-We just import them from React as shown below.
-
-`import {useState, useEffect} from React`
+- How to use useState in a functional component:
+  1. First We just import them from React as shown below.
+     `import {useState} from React`
+  2. Then we initialize it as show below:
+     `const [name, setName] = useState(" ")`
+  3. How to dynamically change State in react using `useState`?
+     `setName(Todd)`
