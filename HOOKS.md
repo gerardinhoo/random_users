@@ -13,6 +13,15 @@ Before we dive deep in the details let's review some core concepts of the React 
 **What's State in react?:**
 State is an object that determines how React components render and behave. It allows us to create components that are dynamic and interactive.
 
+Example to initialize state in a react app:
+
+`this.state = {[name: ""]}`
+
+**How to dynamicall change State in react?:**
+We do that by using `+ setState`
+
+`this.setState: ({name: "Todd"})`
+
 **Lifecycles Components**
 Lifecycles methods can be defined as the series of methods that are invoked in different stages of a component’s existence. Some examples of those methods are:
 
@@ -37,4 +46,4 @@ The two majors hooks features widely used are "useState" and "useEffect".
 
 **How do we use "useState" and "useEffect"**
 
-{import useState, useEffect} from React.
+``import {useState, useEffect} from React`
