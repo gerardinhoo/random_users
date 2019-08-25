@@ -18,9 +18,7 @@ Example to initialize state in a react app:
 `this.state = {[name: ""]}`
 
 **How to dynamicall change State in react?:**
-We do that by using `+ setState`
-
-<p style='color:red'>This is some red text.</p>
+We do that by using `setState`.
 
 `this.setState: ({name: "Todd"})`
 
@@ -48,4 +46,6 @@ The two majors hooks features widely used are "useState" and "useEffect".
 
 **How do we use "useState" and "useEffect"**
 
-``import {useState, useEffect} from React`
+We just import them from Reac as shown below.
+
+`import {useState, useEffect} from React`
