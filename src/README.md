@@ -46,6 +46,8 @@ The two majors hooks features widely used are "useState" and "useEffect".
 
 **How do we use "useState" and "useEffect"**
 
-We just import them from Reac as shown below.
+1. useState:
+
+We just import them from React as shown below.
 
 `import {useState, useEffect} from React`

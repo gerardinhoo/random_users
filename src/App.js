@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Search from "./components/users/Search";
@@ -6,65 +6,59 @@ import Users from "./components/users/Users";
 import About from "./components/pages/About";
 import "./App.css";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      names: [],
-      loading: false,
-      search: ""
-    };
-  }
+const App = ({ handleChange, clearUsers }) => {
+  const [names, setNames] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
 
-  componentDidMount() {
-    this.setState({ loading: true });
+  useEffect(() => {
+    setLoading(true);
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(res => res.json())
-      .then(users => this.setState({ names: users, loading: false }));
-  }
+      .then(users => setNames(users))
+      .then(users => setLoading(false));
+  }, []);
 
   handleChange = e => {
-    this.setState({ search: e.target.value });
+    setSearch(e.target.value);
   };
 
   clearUsers = e => {
-    this.setState({ names: [], loading: false });
+    setNames([]);
+    setLoading(false);
   };
 
-  render() {
-    const { search, names, loading } = this.state;
-    const filterMonsters = names.filter(name =>
-      name.name.toLowerCase().includes(search.toLowerCase())
-    );
-    return (
-      <Router>
-        <div>
-          <Navbar />
+  const filterMonsters = names.filter(name =>
+    name.name.toLowerCase().includes(search.toLowerCase())
+  );
+  return (
+    <Router>
+      <div>
+        <Navbar />
 
-          <div className="container">
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={props => (
-                  <Fragment>
-                    <Search
-                      placeholder="Search Users..."
-                      handleChange={this.handleChange}
-                      clearUsers={this.clearUsers}
-                      showClear={names.length > 0 ? true : false}
-                    />
-                    <Users loading={loading} names={filterMonsters} />
-                  </Fragment>
-                )}
-              />
-              <Route exact path="/about" component={About} />
-            </Switch>
-          </div>
+        <div className="container">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <Fragment>
+                  <Search
+                    placeholder="Search Users..."
+                    handleChange={handleChange}
+                    clearUsers={clearUsers}
+                    showClear={names.length > 0 ? true : false}
+                  />
+                  <Users loading={loading} names={filterMonsters} />
+                </Fragment>
+              )}
+            />
+            <Route exact path="/about" component={About} />
+          </Switch>
         </div>
-      </Router>
-    );
-  }
-}
+      </div>
+    </Router>
+  );
+};
 
 export default App;
