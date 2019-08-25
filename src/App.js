@@ -10,9 +10,14 @@ class App extends Component {
     super();
     this.state = {
       names: [],
-      loading: false
+      loading: false,
+      search: ""
     };
   }
+
+  handleChange = e => {
+    this.setState({ search: e.target.value });
+  };
 
   componentDidMount() {
     this.setState({ loading: true });
@@ -22,12 +27,19 @@ class App extends Component {
   }
 
   render() {
+    const { search, names } = this.state;
+    const filterMonsters = names.filter(name =>
+      name.name.toLowerCase().includes(search.toLowerCase())
+    );
     return (
       <div>
         <Navbar />
         <div className="container">
-          <Search />
-          <Users loading={this.state.loading} names={this.state.names} />
+          <Search
+            placeholder="Search Monsters"
+            handleChange={this.handleChange}
+          />
+          <Users loading={this.state.loading} names={filterMonsters} />
         </div>
       </div>
     );
