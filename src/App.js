@@ -36,7 +36,7 @@ class App extends Component {
         <Navbar />
         <div className="container">
           <Search
-            placeholder="Search Monsters"
+            placeholder="Search Users..."
             handleChange={this.handleChange}
           />
           <Users loading={this.state.loading} names={filterMonsters} />
