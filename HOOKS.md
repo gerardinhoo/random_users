@@ -20,6 +20,8 @@ Example to initialize state in a react app:
 **How to dynamicall change State in react?:**
 We do that by using `+ setState`
 
+<p style='color:red'>This is some red text.</p>
+
 `this.setState: ({name: "Todd"})`
 
 **Lifecycles Components**
