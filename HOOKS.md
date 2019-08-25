@@ -2,7 +2,7 @@
 
 Before we dive deep in the details let's review some core concepts of the React ecosystem to better understand the "WHY" React Hooks and Context API have been introduced by the Facebook Team.
 
-**_Stateful and Stateless Components:_**
+**Stateful and Stateless Components:**
 
 1.  Stateful Components:
     Stateful Components are components that allow us to use a class in our React application but mostly to use state and lifecycle components.
@@ -10,10 +10,10 @@ Before we dive deep in the details let's review some core concepts of the React 
     Stateless Components or functional components allow us to just use pure functions in our react apps.
     Note: Before the introduction of React Hooks which we will talk about later, we could not use state and lifecycle components in stateless or functional components.
 
-**_What's State in react?:_**
+**What's State in react?:**
 State is an object that determines how React components render and behave. It allows us to create components that are dynamic and interactive.
 
-**_Lifecycles Components_**
+**Lifecycles Components**
 Lifecycles methods can be defined as the series of methods that are invoked in different stages of a component’s existence. Some examples of those methods are:
 
 - componentDidMount, render when the component is mounting...
@@ -35,6 +35,6 @@ With the core concepts of React review out of the way let's now learn about Reac
 
 The two majors hooks features widely used are "useState" and "useEffect".
 
-**_How do we use "useState" and "useEffect"_**
+**How do we use "useState" and "useEffect"**
 
 {import useState, useEffect} from React.
