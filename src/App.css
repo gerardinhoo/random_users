@@ -37,6 +37,11 @@ body {
   color: #ffff;
 }
 
+.about {
+  color: #ffff;
+  font-size: 18px;
+}
+
 a {
   color: var(--primary-color);
   text-decoration: none;

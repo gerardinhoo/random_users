@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Search from "./components/users/Search";
-
 import Users from "./components/users/Users";
+import About from "./components/pages/About";
 import "./App.css";
 
 class App extends Component {
@@ -36,23 +37,32 @@ class App extends Component {
       name.name.toLowerCase().includes(search.toLowerCase())
     );
     return (
-      <div>
-        <Navbar />
-        <img
-          src="https://www.sccpre.cat/mypng/detail/2-21859_cartoon-group-of-people-png-png-download-college.png"
-          alt=""
-          style={{ width: "400px", marginLeft: "70%" }}
-        />
-        <div className="container">
-          <Search
-            placeholder="Search Users..."
-            handleChange={this.handleChange}
-            clearUsers={this.clearUsers}
-            showClear={names.length > 0 ? true : false}
-          />
-          <Users loading={loading} names={filterMonsters} />
+      <Router>
+        <div>
+          <Navbar />
+
+          <div className="container">
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={props => (
+                  <Fragment>
+                    <Search
+                      placeholder="Search Users..."
+                      handleChange={this.handleChange}
+                      clearUsers={this.clearUsers}
+                      showClear={names.length > 0 ? true : false}
+                    />
+                    <Users loading={loading} names={filterMonsters} />
+                  </Fragment>
+                )}
+              />
+              <Route exact path="/about" component={About} />
+            </Switch>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
