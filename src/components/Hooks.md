@@ -88,9 +88,9 @@ useEffect(() => {
 
 Sometimes React may an infinite loop issue with this implementation. To solve the issue, we can just add an empty array to the useEffect as shown below.
 
---
+```
 useEffect(() => {
-fetch('url')
-.then( Do Something...)
+  fetch('url')
+    .then( Do Something...)
 }, [])
---
+```
