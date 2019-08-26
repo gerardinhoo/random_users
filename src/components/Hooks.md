@@ -15,12 +15,12 @@ State is an object that determines how React components render and behave. It al
 
 - Initialization of state in a react app:
 
-`this.state = {[name: ""]}`
+* `this.state = {[name: ""]}`
 
 **How to dynamically change State in react?:**
 We do that by using `setState`.
 
-`this.setState: ({name: "Todd"})`
+- `this.setState: ({name: "Todd"})`
 
 **Lifecycles Components**
 Lifecycles methods can be defined as the series of methods that are invoked in different stages of a component’s existence. Some examples of those methods are:
@@ -64,7 +64,7 @@ According to the definition of the official documentation of React, The `UseEffe
 - How to use useEffect in a functional component:
 
   1. First We just import them from React as shown below.
-     `import {useEffect} from React`
+     - `import {useEffect} from React`
 
 - Before the `useEffect` Hook, in order to fetch data from an external API for example we would do something like this:
 
@@ -88,9 +88,9 @@ useEffect(() => {
 
 Sometimes React may an infinite loop issue with this implementation. To solve the issue, we can just add an empty array to the useEffect as shown below.
 
-```
+--
 useEffect(() => {
-  fetch('url')
-    .then( Do Something...)
+fetch('url')
+.then( Do Something...)
 }, [])
-```
+--
