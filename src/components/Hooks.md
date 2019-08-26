@@ -16,7 +16,7 @@ State is an object that determines how React components render and behave. It al
 
 - Initialization of state in a react app:
 
-* `this.state = {[name: ""]}`
+- `this.state = {[name: ""]}`
 
 ## How to dynamically change State in react?:
 
@@ -67,14 +67,10 @@ The `UseState`Hook allow us to use state in functional components.
 According to the definition of the official documentation of React, The `UseEffect` Hook adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a single API.
 
 - How to use useEffect in a functional component:
-
-  1. First We just import them from React as shown below.
-     - `import {useEffect} from React`
-
-- Before the `useEffect` Hook, in order to fetch data from an external API for example we would do something like this:
+  We just import them from React as shown below. - `import {useEffect} from React` - Before the `useEffect` Hook, in order to fetch data from an external API for example we would do something like this:
 
 ```
-  componentDidMount(){
+componentDidMount(){
     fetch('url')
     .then( Do Something...)
 }
