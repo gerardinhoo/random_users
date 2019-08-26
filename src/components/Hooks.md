@@ -52,11 +52,11 @@ The `UseState`Hook allow us to use state in functional components.
 **How to use useState in a functional component:**
 
 - First We just import them from React as shown below:
-  `import {useState} from React`
+  - `import {useState} from React`
 - Then we initialize it as show below:
-  `const [name, setName] = useState(" ")`
+  - `const [name, setName] = useState(" ")`
 - How to dynamically change State in react using `useState`?
-  `setName(Todd)`
+  - `setName(Todd)`
 
 **useEffect:**
 According to the definition of the official documentation of React, The `UseEffect` Hook adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a single API.
