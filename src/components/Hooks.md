@@ -95,3 +95,5 @@ useEffect(() => {
     .then( Do Something...)
 }, [])
 ```
+
+## Context API:
