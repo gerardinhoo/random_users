@@ -44,10 +44,10 @@ With the core concepts of React review out of the way let's now learn about Reac
 
 The two majors hooks features widely used are "useState" and "useEffect".
 
-**How do we use "useState" and "useEffect"**
+**How do we use "useState" and "useEffect Hooks"**
 
 **useState:**
-`UseState` allow us to use state in functional components.
+The `UseState`Hook allow us to use state in functional components.
 
 - How to use useState in a functional component:
   1. First We just import them from React as shown below.
@@ -56,3 +56,35 @@ The two majors hooks features widely used are "useState" and "useEffect".
      `const [name, setName] = useState(" ")`
   3. How to dynamically change State in react using `useState`?
      `setName(Todd)`
+
+**useEffect:**
+According to the definition of the official documentation of React, The `UseEffect` Hook adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a single API.
+
+- Before the `useEffect` Hook, in order to fetch data from an external API for example we would do something like this:
+
+```
+  componentDidMount(){
+    fetch('url')
+    .then( Do Something...)
+}
+```
+
+Note: We could only use ``componentDidMount` in a stateful component.
+
+- With the introduction of the `useEffect` we would do something like this to fetch the data.
+
+```
+useEffect(() => {
+  fetch('url')
+    .then( Do Something...)
+})
+```
+
+Sometimes React may an infinite loop issue with this implementation. To solve the issue, we can just add an empty array to the useEffect as shown below.
+
+```
+useEffect(() => {
+  fetch('url')
+    .then( Do Something...)
+}, [])
+```
