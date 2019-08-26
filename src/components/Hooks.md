@@ -76,7 +76,7 @@ componentDidMount(){
 }
 ```
 
-Note: We could only use ``componentDidMount` in a stateful component.
+Note: We could only use `componentDidMount` in a stateful component.
 
 - With the introduction of the `useEffect` we would do something like this to fetch the data.
 
