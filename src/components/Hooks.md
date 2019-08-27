@@ -10,6 +10,21 @@ Before we dive deep in the details let's review some core concepts of the React 
     Stateless Components or functional components allow us to just use pure functions in our react apps.
     Note: Before the introduction of React Hooks which we will talk about later, we could not use state and lifecycle components in stateless or functional components.
 
+**What's Props in react?:**
+
+Props in React are properties that can be passed from one component to another.
+
+Example:
+
+`const element = <Welcome name="Cayce" />;`
+
+```function Welcome(props) {
+  return <h1>{props.name}</h1>;
+}
+```
+
+=> This results give us `Welcome Cayce`
+
 **What's State in react?:**
 State is an object that determines how React components render and behave. It allows us to create components that are dynamic and interactive.
 
