@@ -2,8 +2,11 @@ import React from "react";
 import UserItem from "./UserItem";
 import Spinner from "../layout/Spinner";
 import PropTypes from "prop-types";
+// import ProfileContext from "../../context/profile/profileContext";
 
-const Users = ({ names, loading }) => {
+const Users = ({ loading, names }) => {
+  // const profileContext = useContext(ProfileContext);
+  // const { loading, names } = profileContext;
   if (loading) {
     return <Spinner />;
   } else {

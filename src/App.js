@@ -5,7 +5,6 @@ import Search from "./components/users/Search";
 import Users from "./components/users/Users";
 import About from "./components/pages/About";
 import "./App.css";
-import ProfileState from "./context/profile/ProfileState";
 
 const App = ({ handleChange, clearUsers }) => {
   const [names, setNames] = useState([]);
@@ -33,33 +32,31 @@ const App = ({ handleChange, clearUsers }) => {
     name.name.toLowerCase().includes(search.toLowerCase())
   );
   return (
-    <ProfileState>
-      <Router>
-        <div>
-          <Navbar />
-          <div className="container">
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={props => (
-                  <Fragment>
-                    <Search
-                      placeholder="Search Users..."
-                      handleChange={handleChange}
-                      clearUsers={clearUsers}
-                      showClear={names.length > 0 ? true : false}
-                    />
-                    <Users loading={loading} names={filterMonsters} />
-                  </Fragment>
-                )}
-              />
-              <Route exact path="/about" component={About} />
-            </Switch>
-          </div>
+    <Router>
+      <div>
+        <Navbar />
+        <div className="container">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <Fragment>
+                  <Search
+                    placeholder="Search Users..."
+                    handleChange={handleChange}
+                    clearUsers={clearUsers}
+                    showClear={names.length > 0 ? true : false}
+                  />
+                  <Users loading={loading} names={filterMonsters} />
+                </Fragment>
+              )}
+            />
+            <Route exact path="/about" component={About} />
+          </Switch>
         </div>
-      </Router>
-    </ProfileState>
+      </div>
+    </Router>
   );
 };
 
