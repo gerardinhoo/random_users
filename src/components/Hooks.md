@@ -1,17 +1,15 @@
 **About React Hooks and Context API**:
-
-Before we dive deep in the details let's review some core concepts of the React ecosystem to better understand the "WHY" React Hooks and Context API have been introduced by the Facebook Team.
+We're uniquely going to learn about React Hooks today. We will learn about Context API later on but before we dive deep into Hooks, let's review some core concepts of the React ecosystem to better understand the "WHY" React Hooks and Context API have been added to the React library or framework.
 
 **Stateful and Stateless Components:**
 
 1.  Stateful Components:
-    Stateful Components are components that allow us to use a class in our React application but mostly to use state and lifecycle components.
+    Stateful Components are components that allow us to use a class in our React application. Those class components use state and lifecycle components(We will learn about life cycle component soon)
 2.  Stateless Components:
-    Stateless Components or functional components allow us to just use pure functions in our react apps.
+    Stateless Components or functional components allow us to just use pure functions in our react apps. They don't use class.
     Note: Before the introduction of React Hooks which we will talk about later, we could not use state and lifecycle components in stateless or functional components.
 
 **What's Props in react?:**
-
 Props in React are properties that can be passed from one component to another.
 
 Example:
@@ -26,7 +24,7 @@ Example:
 => This results give us `Welcome Cayce`
 
 **What's State in react?:**
-State is an object that determines how React components render and behave. It allows us to create components that are dynamic and interactive.
+State is an object that describes the state of our application. It allows us to create components that are dynamic and interactive.
 
 - Initialization of state in a react app:
 
@@ -44,7 +42,7 @@ Lifecycles methods can be defined as the series of methods that are invoked in d
 - componentWillReceiveProps, componentDidUpdate when the component is updating...
 - componentWillUnmount when the component is unmounting...
 
------ Let's take a look at a simple react app using state and a lifecycle component ----
+----- Let's go to Visual Studio code to take a look at a simple react app using all the tools we've just talked about above. ----
 
 **What are React Hooks and Context API?**
 With the core concepts of React review out of the way let's now learn about React Hooks and Context API.
